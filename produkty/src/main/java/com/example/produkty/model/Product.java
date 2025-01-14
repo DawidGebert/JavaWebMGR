@@ -17,10 +17,10 @@ public class Product {
     private String name;
 
     @Column(nullable = false)
-    private int quantity;
+    private String review;
 
     @Column(nullable = false)
-    private double price;
+    private double rating;
 
     public Long getId() {
         return id;
@@ -38,19 +38,17 @@ public class Product {
         this.name = name;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public String getReview() {
+        return review;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setReview(String review) {this.review = review;}
+
+    public double getRating() {
+        return rating;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 }
