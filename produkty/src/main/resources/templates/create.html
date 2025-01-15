@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Dodaj produkt</title>
+  <title>Add movie</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html {
+        font-size: 14px;
+        background-color: #caf0f8
+    }
+    .checked {
+        color: yellow;
+    }
+    .container {
+        background-color: #ade8f4
+    }
+    body {
+        margin-bottom: 60px;
+        background-color: #caf0f8
+    }
+
+  </style>
 </head>
 <body>
-<h1>Dodaj nowy produkt</h1>
+<div class="container">
+<h1>Add new movie</h1>
+  <table class="table table-bordered border-dark table-striped">
 <form action="#" th:action="@{/products/create}" th:object="${product}" method="post">
-  <label>Nazwa:</label>
-  <input type="text" th:field="*{name}" />
-  <label>Ilość:</label>
-  <input type="number" th:field="*{quantity}" />
-  <label>Cena:</label>
-  <input type="number" step="0.01" th:field="*{price}" />
-  <button type="submit">Dodaj</button>
+  <tbody>
+  <tr><td><label>Title:</label></td>
+    <td><input type="text" th:field="*{name}" /></td></tr>
+  <tr><td><label>Review:</label></td>
+    <td><input type="text" th:field="*{review}" /></td></tr>
+  <tr><td><label>Rating:</label></td>
+    <td><input type="number" th:field="*{rating}" /></td></tr>
+  <tr><td></td><td><button type="submit">Add</button></td></tr>
+  </tbody>
 </form>
+    <form action="#" th:action="@{/products}" method="get">
+    <button type="submit">Back to list</button>
+    </form>
+    </table>
+</div>
 </body>
 </html>
